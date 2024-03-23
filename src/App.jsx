@@ -8,6 +8,7 @@ import Home from './components/Home'
 import Skills from './components/Skills'
 import Workk from './components/Workk'
 import Contact from './components/contact'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 
@@ -17,13 +18,19 @@ function App() {
   return (
 
    <>
+  
+   <BrowserRouter>
    <Navbar/>
-   <Home/>
+   <Routes>
+   <Route path="/" element={<Home />} />
+   <Route path="/about" element={<About />} />
+   <Route path="/skills" element={<Skills />} />
+   <Route path="/contact" element={<Contact />} />
+   <Route path="/work" element={<Workk />} />
+   </Routes>
+   </BrowserRouter>
+  
    
-   <About/>
-   <Skills/>
-   <Workk/>
-   <Contact/>
    </>
   )
 }
