@@ -1,15 +1,22 @@
-# Sivaji portfolio
-# site is live on netlify : https://sivaji-portfolio-react.netlify.app/
-## screenshot
-<img src="https://github.com/sivajisj/react-portfolio-sj/blob/main/sj.png" />
+# Sivaji Gadidala Portfolio
 
+A responsive engineering portfolio for Rust backend, AI infrastructure, blockchain, and full-stack roles.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Run locally
 
-Currently, two official plugins are available:
+```sh
+npm install
+npm run dev
+```
 
-## icons
-<a href="https://icons8.com">icon8</a>
+## Contact and scheduling
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The enquiry form delivers submissions to the public contact email through FormSubmit's AJAX endpoint and includes a honeypot field. The first live submission may require confirming the activation email delivered by FormSubmit. Visitors can book a time through the public Sivaji Scheduler app linked from the portfolio.
+
+## Projects
+
+Project cards point to source repositories under `sivajisj2`. Prototype limits and implementation status are described in the project READMEs.
+
+## Deploy on Netlify
+
+The repository includes a Netlify build configuration. Connect the GitHub repository and deploy the `main` branch. Site output is generated in `dist/`.
