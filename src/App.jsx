@@ -214,7 +214,7 @@ function App() {
             <p className="eyebrow"><span className="eyebrow-line" /> SOFTWARE ENGINEER <span className="eyebrow-divider">/</span> BENGALURU, INDIA</p>
             <h1>I build the systems<br />behind <em>ambitious</em> products.</h1>
             <p className="hero-lead">Rust backend engineer working across AI infrastructure, blockchain, and full-stack products. I care about the hard parts: clear service boundaries, safe state changes, and software teams can operate.</p>
-            <div className="hero-actions"><a className="button button--primary" href="#work">Explore selected work <Icon name="arrow" /></a><a className="button button--text" href="#contact">Start a conversation</a><a className="resume-link" href="/Sivaji-Gadidala-Resume.pdf" target="_blank" rel="noreferrer">View résumé <Icon name="arrow" size={13} /></a></div>
+            <div className="hero-actions"><a className="button button--primary" href="#work">Explore selected work <Icon name="arrow" /></a><a className="button button--text" href="#contact">Start a conversation</a><a className="resume-link" href={`${import.meta.env.BASE_URL}Sivaji-Gadidala-Resume.pdf`} target="_blank" rel="noreferrer">View résumé <Icon name="arrow" size={13} /></a></div>
             <div className="hero-footnote"><span>OPEN TO RUST / AI INFRA / WEB3 ROLES</span><span>2+ YEARS SHIPPING SOFTWARE</span></div>
           </div>
           <div className="hero-art" aria-label="Engineering disciplines connected in a system map">

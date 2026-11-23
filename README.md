@@ -1,6 +1,10 @@
 # Sivaji Gadidala Portfolio
 
-A responsive engineering portfolio for Rust backend, AI infrastructure, blockchain, and full-stack roles.
+Responsive portfolio for Rust backend, AI infrastructure, blockchain, and full-stack engineering roles.
+
+## Live site
+
+https://sivajisj2.github.io/react-portfolio-sj/
 
 ## Run locally
 
@@ -11,12 +15,12 @@ npm run dev
 
 ## Contact and scheduling
 
-The enquiry form delivers submissions to the public contact email through FormSubmit's AJAX endpoint and includes a honeypot field. The first live submission may require confirming the activation email delivered by FormSubmit. Visitors can book a time through the public Sivaji Scheduler app linked from the portfolio.
+The enquiry form delivers messages to the contact email in the site through FormSubmit's AJAX endpoint and includes a honeypot. FormSubmit may require confirming its initial activation email. Meeting bookings open the public Sivaji Scheduler app, which displays available time slots.
 
 ## Projects
 
-Project cards point to source repositories under `sivajisj2`. Prototype limits and implementation status are described in the project READMEs.
+Project cards link to repositories under `sivajisj2`. Project READMEs document implementation details and prototype limits.
 
-## Deploy on Netlify
+## Deployment
 
-The repository includes a Netlify build configuration. Connect the GitHub repository and deploy the `main` branch. Site output is generated in `dist/`.
+A GitHub Actions workflow builds the Vite application and publishes `dist/` to GitHub Pages on pushes to `main`.
