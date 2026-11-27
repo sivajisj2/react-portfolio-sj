@@ -15,7 +15,7 @@ npm run dev
 
 ## Contact and scheduling
 
-The enquiry form delivers messages to the contact email in the site through FormSubmit's AJAX endpoint and includes a honeypot. FormSubmit may require confirming its initial activation email. Meeting bookings open the public Sivaji Scheduler app, which displays available time slots.
+The enquiry form uses FormSubmit's documented HTML POST endpoint, named fields, a spam honeypot, a table email template, and a thank-you redirect. On first use, FormSubmit sends an activation email to the portfolio inbox; confirm it before expecting subsequent submissions to arrive. Meeting bookings open the public Sivaji Scheduler app, which displays available time slots.
 
 ## Projects
 
