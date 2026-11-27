@@ -91,21 +91,6 @@ const experience = [
   },
 ]
 
-async function deliverForm(form, subject) {
-  const data = new FormData(form)
-  if (data.get('_honey')) return true
-  data.set('_subject', subject)
-  const response = await fetch(`https://formsubmit.co/ajax/${profile.email}`, {
-    method: 'POST',
-    headers: { Accept: 'application/json' },
-    body: data,
-  })
-  if (!response.ok) throw new Error('Message could not be sent. Please email me directly.')
-  const result = await response.json()
-  if (result.success === 'false' || result.success === false) throw new Error(result.message || 'Message could not be sent.')
-  return true
-}
-
 function Icon({ name, size = 18 }) {
   const common = { width: size, height: size, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.7, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true }
   if (name === 'arrow') return <svg {...common}><path d="M7 17 17 7M7 7h10v10" /></svg>
@@ -150,29 +135,11 @@ function ProjectCard({ project }) {
 }
 
 function ContactForm() {
-  const [status, setStatus] = useState('')
-  const [sending, setSending] = useState(false)
-
-  async function handleSubmit(event) {
-    event.preventDefault()
-    const form = event.currentTarget
-    setSending(true)
-    setStatus('')
-    try {
-      await deliverForm(form, 'New portfolio enquiry for Sivaji')
-      form.reset()
-      setStatus('Your message is on its way. Thanks for reaching out.')
-    } catch (error) {
-      setStatus(error.message || 'Message could not be sent. Please email me directly.')
-    } finally {
-      setSending(false)
-    }
-  }
-
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
+    <form className="contact-form" action="https://formsubmit.co/sivajigsivajig703@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="New portfolio enquiry for Sivaji" />
       <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_next" value="https://sivajisj2.github.io/react-portfolio-sj/thanks.html" />
       <label className="honeypot" aria-hidden="true">Leave this blank<input name="_honey" tabIndex="-1" autoComplete="off" /></label>
       <div className="form-row">
         <label>Your name<input name="name" placeholder="How should I address you?" autoComplete="name" required maxLength="100" /></label>
@@ -184,8 +151,7 @@ function ContactForm() {
         </select>
       </label>
       <label>Message<textarea name="message" rows="5" placeholder="A few details about the role, team, or problem..." required minLength="10" maxLength="4000" /></label>
-      <div className="form-bottom"><button className="button button--primary" type="submit" disabled={sending}>{sending ? 'Sending message...' : 'Send enquiry'} <Icon name="arrow" /></button><span>Replies usually arrive within one working day.</span></div>
-      <p className={`form-status ${status.startsWith('Your') ? 'form-status--success' : ''}`} aria-live="polite">{status}</p>
+      <div className="form-bottom"><button className="button button--primary" type="submit">Send enquiry <Icon name="arrow" /></button><span>Replies usually arrive within one working day.</span></div>
     </form>
   )
 }
